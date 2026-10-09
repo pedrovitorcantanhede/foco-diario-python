@@ -15,11 +15,19 @@ print("3. [ ]", prioridade_3)
 print()
 print("===== OUTRAS TAREFAS =====")
 
-resposta = input("Deseja adicionar uma tarefa? (s/n): ")
+tarefas = []
 
+resposta = input("Deseja adicionar uma tarefa? (s/n): ")
 while resposta == "s" or resposta == "S":
     tarefa = input("Tarefa: ")
+    tarefas.append(tarefa)
     resposta = input("Deseja adicionar outra tarefa? (s/n): ")
+print()
+print("===== MINHAS TAREFAS =====")
+contador = 1
+for tarefa in tarefas:
+    print(contador, ". [ ]", tarefa)
+    contador += 1
 
 print()
 print("Planejamento concluído.")
