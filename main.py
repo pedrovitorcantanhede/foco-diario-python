@@ -37,33 +37,39 @@ for i in range(3):
         print(i + 1, ". [ ]", prioridades[i])
 print()
 print("===== OUTRAS TAREFAS =====")
-
 tarefas = []
-concluidas = [] 
+concluidas = []
+
 resposta = input("Deseja adicionar uma tarefa? (s/n): ")
+
 while resposta == "s" or resposta == "S":
     tarefa = input("Tarefa: ")
     tarefas.append(tarefa)
-    concluidas.append(False) 
+    concluidas.append(False)
     resposta = input("Deseja adicionar outra tarefa? (s/n): ")
-print()
 print("===== MINHAS TAREFAS =====")
 contador = 1
 for tarefa in tarefas:
     print(contador, ". [ ]", tarefa)
-    contador += 1    
+    contador += 1
 
-while True:  
+while True:
     numero = int(input("Qual tarefa deseja concluir? (0 para sair): "))
+
     if numero == 0:
-      break
-    if 1<= numero <= len(tarefas):
+        break
+
+    if 1 <= numero <= len(tarefas):
         if concluidas[numero - 1]:
             print("Essa tarefa já foi concluída.")
-        concluidas[numero - 1] = True
-        print("Tarefa concluída!")
+        else:
+            concluidas[numero - 1] = True
+            print("Tarefa concluída!")
     else:
         print("Número inválido. Tarefa não concluída.")
+
+print()
+print("===== SITUAÇÃO DAS TAREFAS =====")
 
 for i in range(len(tarefas)):
     if concluidas[i]:
